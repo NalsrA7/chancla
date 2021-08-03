@@ -2,16 +2,25 @@
 ### START OF THE GREATEST FOOD RECOMMENDATION BOT EVER ###
 ##########################################################
 
+### Work In Progress ###
+
 import random
 
-Foodie = {'breakfast':['cereal','eggs and toast','PB&J','avocado on toast'],
-            'lunch':['grilled cheese','nasi goreng','lodeh lodeh','mcdonalds fillet-o-fish'],
-            'dinner':['steak','ziti pasta','rice and eggs','pizza'],
-            'dessert':['ice cream','choco pudding','lava cake','vanilla panna cotta']}
-food_rec = ''
+Foodie = {'breakfast':
+            {'hot':['eggs on toast','egg burrito','pancakes'],
+            'cold':['cereal','PB&J','avocado on toast']},
+        'lunch':
+            {'hot':['grilled cheese','nasi goreng','lodeh lodeh','mcdonalds fillet-o-fish'],
+            'cold':['chicken salad','fruit salad']},
+        'dinner':
+            {'hot':['beef steak','baked ziti pasta','rice and eggs','cheese pizza'],
+            'cold':['pesto pasta','caesar salad','cereal']},
+        'dessert':
+            {'hot':['jaleebi','gulab jamun','pancakes','lava mug cake'],
+            'cold':['ice cream','choco pudding','vanilla panna cotta']}}
+#food_rec = ''
 
 print('Welcome to the food recommender bot')
-
 
 
 while True:
