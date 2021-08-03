@@ -4,10 +4,10 @@
 
 import random
 
-Foodie = {'breakfast':['cereal','eggs and toast','PB&J'],
-            'lunch':['grilled cheese','nasi goreng','lodeh lodeh'],
-            'dinner':['steak','ziti pasta','rice and eggs'],
-            'dessert':['ice cream','choco pudding']}
+Foodie = {'breakfast':['cereal','eggs and toast','PB&J','avocado on toast'],
+            'lunch':['grilled cheese','nasi goreng','lodeh lodeh','mcdonalds fillet-o-fish'],
+            'dinner':['steak','ziti pasta','rice and eggs','pizza'],
+            'dessert':['ice cream','choco pudding','lava cake','vanilla panna cotta']}
 food_rec = ''
 
 print('Welcome to the food recommender bot')
