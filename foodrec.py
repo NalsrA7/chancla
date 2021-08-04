@@ -16,7 +16,7 @@ print('Welcome to the food recommender bot')
 
 while True:
 
-    time_of_meal = input('Which time of meal would you like a recommendation for? [breakfast/lunch/dinner/dessert]:\n')
+    time_of_meal = input('Which time of meal would you like a recommendation for? [breakfast/lunch/dinner/dessert]:\n').lower()
     
     if time_of_meal in foodie:
         print(f'You chose {time_of_meal}!')
@@ -27,7 +27,7 @@ while True:
 
 while True:
 
-    temp_of_meal = input('Now please input wether you would like hot or cold food! [hot/cold]:\n')
+    temp_of_meal = input('Now please input wether you would like hot or cold food! [hot/cold]:\n').lower()
     
     if temp_of_meal in foodie[time_of_meal]:
         print(f'You chose {temp_of_meal}!')
@@ -37,7 +37,7 @@ while True:
 
 while True:
 
-    size_of_meal = input('Finally, please input wether you would like heavy or light food! [heavy/light]:\n')
+    size_of_meal = input('Finally, please input wether you would like heavy or light food! [heavy/light]:\n').lower()
 
     if size_of_meal in foodie[time_of_meal][temp_of_meal]:
         print(f'You chose {size_of_meal}!')
@@ -54,7 +54,7 @@ print(f'Hooray! You should eat {food_rec}!')
 yes_choices = ['y','Y','yes','Yes','YES']
 no_choices = ['n','N','no','No','NO']
 
-time.sleep(4)
+time.sleep(3)
 print('Whould you like to recommend a food to be added to the list?')
 
 while True:
@@ -69,7 +69,7 @@ while True:
 
         while True:
 
-            time_of_meal = input('Which time of meal would you like to recommend? [breakfast/lunch/dinner/dessert]:\n')
+            time_of_meal = input('Which time of meal would you like to recommend? [breakfast/lunch/dinner/dessert]:\n').lower()
     
             if time_of_meal in foodie:
                 print(f'You chose {time_of_meal}!')
@@ -79,7 +79,7 @@ while True:
 
         while True:
 
-            temp_of_meal = input('Would you like to recommend hot or cold food! [hot/cold]:\n')
+            temp_of_meal = input('Would you like to recommend hot or cold food! [hot/cold]:\n').lower()
     
             if temp_of_meal in foodie[time_of_meal]:
                 print(f'You chose {temp_of_meal}!')
@@ -89,7 +89,7 @@ while True:
 
         while True:
 
-            size_of_meal = input('Will you recommend heavy or light food! [heavy/light]:\n')
+            size_of_meal = input('Will you recommend heavy or light food! [heavy/light]:\n').lower()
 
             if size_of_meal in foodie[time_of_meal][temp_of_meal]:
                 print(f'You chose {size_of_meal}!')
@@ -100,6 +100,7 @@ while True:
         new_food = input('Finally, please type what food would you like to recommend.\n')
         
         foodie[time_of_meal][temp_of_meal][size_of_meal].append(str(new_food))
+        
         with open('foodie_dict.json','w') as json_file:
             json.dump(foodie,json_file,indent=4)
         
@@ -115,6 +116,5 @@ while True:
     else:
         print('Sorry! You can only type Y for YES and N for NO.')
 
-### STILL NEED TO ADD CODE TO APPEND new_food TO THE DICTIONARY
 time.sleep(2)
-print('Thank you for using our food recommendation')
+print('Thank you for using our food recommendation!')
