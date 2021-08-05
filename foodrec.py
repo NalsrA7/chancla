@@ -4,15 +4,18 @@
 
 ### Work In Progress ###
 
+#from abc import abstractmethod
 import random
 import time
 import json
+#from typing import KeysView
 
 # Initializing food dictionary
 with open('foodie_dict.json','r') as json_file:
     foodie = json.load(json_file)
 
 print('Welcome to the food recommender bot')
+time.sleep(1.5)
 
 while True:
 
@@ -53,6 +56,8 @@ print(f'Hooray! You should eat {food_rec}!')
 
 yes_choices = ['y','Y','yes','Yes','YES']
 no_choices = ['n','N','no','No','NO']
+food_opt = ['food_options','food options']
+list_food = []
 
 time.sleep(3)
 print('Whould you like to recommend a food to be added to the list?')
@@ -69,11 +74,19 @@ while True:
 
         while True:
 
+            print('to see the current options of food, type [food_options]')
             time_of_meal = input('Which time of meal would you like to recommend? [breakfast/lunch/dinner/dessert]:\n').lower()
     
             if time_of_meal in foodie:
                 print(f'You chose {time_of_meal}!')
                 break
+            
+            elif time_of_meal in food_opt:
+                for x in foodie.values():
+                    for y in x.values():
+                        for z in y.values():
+                            print(z)
+            
             else:
                 print('Sorry! you can only input either breakfast, lunch, dinner, or dessert. Please try again')
 
@@ -96,6 +109,7 @@ while True:
                 break
             else:
                 print('Sorry! you can only input either heavy or light. Please try again')
+
 
         new_food = input('Finally, please type what food would you like to recommend.\n')
         
