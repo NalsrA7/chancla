@@ -4,11 +4,9 @@
 
 ### Work In Progress ###
 
-#from abc import abstractmethod
 import random
 import time
 import json
-#from typing import KeysView
 
 # Initializing food dictionary
 with open('foodie_dict.json','r') as json_file:
