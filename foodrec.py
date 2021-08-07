@@ -7,10 +7,67 @@
 import random
 import time
 import json
+import discord
+from discord.ext import commands
+import asyncio
+
+client = commands.Bot(command_prefix = ['c.',"C."], help_command=commands.MinimalHelpCommand(no_category = "Miscellaneous"), activity=discord.Activity(type = discord.ActivityType.playing, name = 'c.help | weeeeeee'), case_insensitive=True)
 
 # Initializing food dictionary
 with open('foodie_dict.json','r') as json_file:
     foodie = json.load(json_file)
+
+# Classes created to display buttons on discord and take in input     
+class TimeOfMeal(discord.ui.View):
+    
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Breakfast")
+    async def breakfast(self, button, interaction):
+        time_of_meal = "breakfast"
+        await interaction.response.edit_message("Now please input wether you would like hot or cold food!", view=TempOfMeal)
+    
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Lunch")
+    async def lunch(self, button, interaction):
+        time_of_meal = "lunch"
+        await interaction.response.edit_message("Now please input wether you would like hot or cold food!", view=TempOfMeal)
+
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Dinner")
+    async def dinner(self, button, interaction):
+        time_of_meal = "dinner"
+        await interaction.response.edit_message("Now please input wether you would like hot or cold food!", view=TempOfMeal)
+        
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Dessert")
+    async def dessert(self, button, interaction):
+        time_of_meal = "dessert"
+        await interaction.response.edit_message("Now please input wether you would like hot or cold food!", view=TempOfMeal)
+    
+    
+class TempOfMeal(discord.ui.View):
+    
+    @discord.ui.button(style=discord.ButtonStyle.danger, label="Hot", emoji="🔥")
+    async def hot(self, button, interaction):
+        temp_of_meal = "hot"
+        await interaction.response.edit_message("Finally, please input wether you would like heavy or light food!", view=SizeOfMeal)
+    
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Cold", emoji="❄")
+    async def cold(self, button, interaction):
+        temp_of_meal = "cold"
+        await interaction.response.edit_message("Finally, please input wether you would like heavy or light food!", view=SizeOfMeal)
+        
+    
+class SizeOfMeal(discord.ui.View):
+    
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Heavy")
+    async def heavy(self, button, interaction):
+        size_of_meal = "heavy"
+        food_rec = random.choice(foodie[time_of_meal][temp_of_meal][size_of_meal])
+        await interaction.response.send_message(f'Hooray! You should eat {food_rec}!')
+        
+    @discord.ui.button(style=discord.ButtonStyle.primary, label="Light")
+    async def light(self, button, interaction):
+        size_of_meal = "light"
+        food_rec = random.choice(foodie[time_of_meal][temp_of_meal][size_of_meal])
+        await interaction.response.send_message(f'Hooray! You should eat {food_rec}!')
+    
 
 print('Welcome to the food recommender bot')
 time.sleep(1.5)
@@ -130,3 +187,5 @@ while True:
 
 time.sleep(2)
 print('Thank you for using our food recommendation!')
+
+client.run("ODczMzk2MjMyMjU5NzY0MjU1.YQ3zoA.RMwTE9it_VNYGua6aA55RgUoboA")
