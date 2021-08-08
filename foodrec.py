@@ -10,6 +10,7 @@ import json
 import discord
 from discord.ext import commands
 import asyncio
+import config
 
 client = commands.Bot(command_prefix = ['im.',"I.","c.","C."], 
                       help_command=commands.MinimalHelpCommand(no_category = "Available Commands"), 
@@ -244,7 +245,6 @@ async def hungry(ctx):
     message = await ctx.send("Which time of meal would you like a recommendation for?", view=TimeOfMeal())
 
 
-#if __name__ in '__main___':
-#    print('el potata el seniorita, chimpanzee sobrar')
-    
-client.run("ODczMzk2MjMyMjU5NzY0MjU1.YQ3zoA.Gp-_FpHEY0FDbdbSzRyF6G_Kv5g") 
+
+  
+client.run(config.token) 
