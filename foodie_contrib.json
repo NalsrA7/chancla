@@ -1,0 +1,44 @@
+{
+    "breakfast": {
+        "hot": {
+            "heavy": [],
+            "light": []
+        },
+        "cold": {
+            "heavy": [],
+            "light": []
+        }
+    },
+    "lunch": {
+        "hot": {
+            "heavy": [
+                "italian pizza"
+            ],
+            "light": []
+        },
+        "cold": {
+            "heavy": [],
+            "light": []
+        }
+    },
+    "dinner": {
+        "hot": {
+            "heavy": [],
+            "light": []
+        },
+        "cold": {
+            "heavy": [],
+            "light": []
+        }
+    },
+    "dessert": {
+        "hot": {
+            "heavy": [],
+            "light": []
+        },
+        "cold": {
+            "heavy": [],
+            "light": []
+        }
+    }
+}
