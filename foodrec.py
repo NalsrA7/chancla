@@ -245,6 +245,9 @@ async def hungry(ctx):
     message = await ctx.send("Which time of meal would you like a recommendation for?", view=TimeOfMeal())
 
 
-
-  
-client.run(config.token) 
+# prevents bot from running if this script is imported elsewhere
+def main():
+    client.run(config.token) 
+    
+if __name__ == "__main__":
+    main()
