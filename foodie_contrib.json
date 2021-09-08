@@ -33,12 +33,18 @@
     },
     "dessert": {
         "hot": {
-            "heavy": [],
-            "light": []
+            "heavy": [
+                "Italian Hot Chocolate"
+            ],
+            "light": [
+                "bobcorn"
+            ]
         },
         "cold": {
             "heavy": [],
-            "light": []
+            "light": [
+                "Cookies & Cream Ice Cream"
+            ]
         }
     }
 }
